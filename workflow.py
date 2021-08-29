@@ -1,5 +1,5 @@
 import os
-
+from datetime import datetime
 import requests
 import json
 from bs4 import BeautifulSoup as bs
@@ -17,7 +17,6 @@ def send_msg(text):
 
 this_year =  datetime.now().year
 this_month = datetime.now().month
-from datetime import datetime
 url = f'http://jdih.kemendag.go.id/peraturan?tahunreg={this_year}&groupreg=4&jenisreg=&komoditireg=&search=Penetapan+Harga+Patokan+Ekspor+Atas+Produk+Pertanian+Dan+Kehutanan+Yang+Dikenakan+Bea+Keluar'
 
 rs = requests.get(url)
