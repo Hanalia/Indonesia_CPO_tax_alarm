@@ -40,5 +40,11 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
-
+    - name: Commits
+      run: |
+        git config --local user.email "davethe@naver.com"
+        git config --local user.name "cpo_alarm" 
+        git add ./records.json
+        git commit -m "Auto - Update data with Scraping"
+        git pull origin master
         
