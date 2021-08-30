@@ -48,4 +48,10 @@ jobs:
         git add ./tmp.json
         git commit -m "Auto - Update data with Scraping"
         git pull origin master
+        git pull origin master
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        branch: 'master'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         
