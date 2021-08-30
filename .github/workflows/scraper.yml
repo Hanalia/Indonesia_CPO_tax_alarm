@@ -45,6 +45,7 @@ jobs:
         git config --local user.email "davethe@naver.com"
         git config --local user.name "cpo_alarm" 
         git add ./records.json
+        git add ./tmp.json
         git commit -m "Auto - Update data with Scraping"
         git pull origin master
         

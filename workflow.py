@@ -5,6 +5,8 @@ import json
 from bs4 import BeautifulSoup as bs
 with open('records.json') as json_file:
     records = json.load(json_file)
+
+
 TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
 MY_CHAT_ID = os.environ['MY_CHAT_ID']
 def send_msg(text):
@@ -50,3 +52,10 @@ if not any(record['date'] == recent_date for record in records) and recent_month
     records.append(new_entry)
     with open('records.json', 'w') as fp:
         json.dump(records, fp)
+else:
+    
+    with open('tmp.json', 'w') as fp:
+        a_datetime = datetime.datetime.now()
+        formatted_datetime = a_datetime.isoformat()
+        json_datetime = json.dumps(formatted_datetime)
+        json.dump(json_datetime, fp)
