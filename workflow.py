@@ -55,7 +55,7 @@ if not any(record['date'] == recent_date for record in records) and recent_month
 else:
     
     with open('tmp.json', 'w') as fp:
-        a_datetime = datetime.datetime.now()
+        a_datetime = datetime.now()
         formatted_datetime = a_datetime.isoformat()
         json_datetime = json.dumps(formatted_datetime)
         json.dump(json_datetime, fp)
